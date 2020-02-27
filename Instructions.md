@@ -191,5 +191,3 @@ Notes:
 - The instruction counts above ignore extra moves that may happen between instructions; see https://bugs.chromium.org/p/v8/issues/detail?id=10116
 - All shifts (except for byte shifts) are 1 instruction on x64 when the shift operand is an immediate and 3 when it's not
 - All shifts are 1 instruction on arm64 when the shift operand is an immediate and 3 (left) or 4 (right) when it's not
-
-# Shuffles
