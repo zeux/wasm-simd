@@ -64,8 +64,12 @@ Example:
 
 ## Unzips
 
-These shuffle masks map to 4-6 instructions on x64 and 1 instruction on arm64.
+These shuffle masks map to 4-6 instructions on x64 (1 for 32-bit) and 1 instruction on arm64.
 They allow you to alternate between 8/16-bit elements from both vectors, but instead of working on low/high halves of the input vector, they output odd/even elements from each vector sequentially.
+
+32-bit:
+- even: `{0, 1, 2, 3, 8, 9, 10, 11, 16, 17, 18, 19, 24, 25, 26, 27}`
+- odd: `{4, 5, 6, 7, 12, 13, 14, 15, 20, 21, 22, 23, 28, 29, 30, 31}`
 
 16-bit:
 - even: `{0, 1, 4, 5, 8, 9, 12, 13, 16, 17, 20, 21, 24, 25, 28, 29}`
