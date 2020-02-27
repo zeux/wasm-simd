@@ -96,3 +96,5 @@ They allow you to reverse the order of bytes in each 64/32/16-bit lane. Happy en
 - 64-bit: `{7, 6, 5, 4, 3, 2, 1, 0, 15, 14, 13, 12, 11, 10, 9, 8}`
 - 32-bit: `{3, 2, 1, 0, 7, 6, 5, 4, 11, 10, 9, 8, 15, 14, 13, 12}`
 - 16-bit: `{1, 0, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14}`
+
+Note: When https://bugs.chromium.org/p/v8/issues/detail?id=10117 gets fixed I'm expecting that most shuffle instructions above that map to ~5 x64 instructions become much less interesting for cross-platform code, and the set of fast portable shuffles can be reduced further.
