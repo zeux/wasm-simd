@@ -84,6 +84,7 @@ They allow you to alternate between 8/16-bit elements from both vectors, but ins
 These shuffle masks map to 4-5 instructions on x64 and 1 instruction on arm64.
 They allow you to alternate between 8-bit elements from both vectors, but instead of working on low/high halves of the input vector, they output odd/even elements, and instead of outputting elements from each vector sequentially they alternate between the two vectors. Who comes up with this stuff?
 
+8-bit:
 - even: `{0, 16, 2, 18, 4, 20, 6, 22, 8, 24, 10, 26, 12, 28, 14, 30}`
 - odd: `{1, 17, 3, 19, 5, 21, 7, 23, 9, 25, 11, 27, 13, 29, 15, 31}`
 
