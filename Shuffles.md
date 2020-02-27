@@ -10,7 +10,7 @@ When the pattern matching fails, v8 resorts to a bruteforce solution, which is p
 
 Both fallback paths are *slow* so you want to avoid them at all costs, which means that (unfortunately) you need to know which masks pattern-match well - this is complex!
 
-Because describing the entire possibility space is way too hard, let's look at shuffles that are supported natively on both x64 and arm64.
+Because describing the entire possibility space is way too hard, let's look at shuffles that are supported efficiently on both x64 and arm64.
 
 ## Splats
 
@@ -51,11 +51,21 @@ They allow you to alternate between 8/16/32/64-bit elements from both vectors, e
 8-bit:
 - low: `{0, 16, 1, 17, 2, 18, 3, 19, 4, 20, 5, 21, 6, 22, 7, 23}`
 - high: `{8, 24, 9, 25, 10, 26, 11, 27, 12, 28, 13, 29, 14, 30, 15, 31}`
-    
-## Unzips   
+
+
+## Concats
+
+These shuffle masks map to 1 instruction on x64 and 1 instruction on arm64.
+These shuffle masks allow you to concatenate two parts of the input registers, taking a suffix of the first register (e.g. last 10 bytes) and the prefix of the second register (e.g. first 6 bytes).
+
+Example:
+
+- `{6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21}`
+
+## Unzips
 
 These shuffle masks map to 4-6 instructions on x64 and 1 instruction on arm64.
-They allow you to alternate between 8/16-bit elements from both vectors, but instead of working on low/high halves of the input vector, they work on odd/even elements.
+They allow you to alternate between 8/16-bit elements from both vectors, but instead of working on low/high halves of the input vector, they output odd/even elements from each vector sequentially.
 
 16-bit:
 - even: `{0, 1, 4, 5, 8, 9, 12, 13, 16, 17, 20, 21, 24, 25, 28, 29}`
@@ -67,14 +77,11 @@ They allow you to alternate between 8/16-bit elements from both vectors, but ins
 
 ## Transposes
 
-4-5 x64, 
-    {{0, 16, 2, 18, 4, 20, 6, 22, 8, 24, 10, 26, 12, 28, 14, 30},
-    {{1, 17, 3, 19, 5, 21, 7, 23, 9, 25, 11, 27, 13, 29, 15, 31},
-    
-        {{0, 16, 2, 18, 4, 20, 6, 22, 8, 24, 10, 26, 12, 28, 14, 30},
-     kArm64S8x16TransposeLeft},
-    {{1, 17, 3, 19, 5, 21, 7, 23, 9, 25, 11, 27, 13, 29, 15, 31},
-     kArm64S8x16TransposeRight},
+These shuffle masks map to 4-5 instructions on x64 and 1 instruction on arm64.
+They allow you to alternate between 8-bit elements from both vectors, but instead of working on low/high halves of the input vector, they output odd/even elements, and instead of outputting elements from each vector sequentially they alternate between the two vectors. Who comes up with this stuff?
+
+- even: `{0, 16, 2, 18, 4, 20, 6, 22, 8, 24, 10, 26, 12, 28, 14, 30}`
+- odd: `{1, 17, 3, 19, 5, 21, 7, 23, 9, 25, 11, 27, 13, 29, 15, 31}`
 
 ## Reverses
 
@@ -84,6 +91,3 @@ They allow you to reverse the order of bytes in each 64/32/16-bit lane. Happy en
 - 64-bit: `{7, 6, 5, 4, 3, 2, 1, 0, 15, 14, 13, 12, 11, 10, 9, 8}`
 - 32-bit: `{3, 2, 1, 0, 7, 6, 5, 4, 11, 10, 9, 8, 15, 14, 13, 12}`
 - 16-bit: `{1, 0, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14}`
-
-## Concats
-
