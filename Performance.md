@@ -88,79 +88,79 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `i8x16.neg`                |                         2 |                       |
 | `i8x16.any_true`           |                         4 |                       |
 | `i8x16.all_true`           |                         6 |                       |
-| `i8x16.shl`                |                           |                       |
-| `i8x16.shr_s`              |                           |                       |
-| `i8x16.shr_u`              |                           |                       |
-| `i8x16.add`                |                           |                       |
-| `i8x16.add_saturate_s`     |                           |                       |
-| `i8x16.add_saturate_u`     |                           |                       |
-| `i8x16.sub`                |                           |                       |
-| `i8x16.sub_saturate_s`     |                           |                       |
-| `i8x16.sub_saturate_u`     |                           |                       |
-| `i8x16.min_s`              |                           |                       |
-| `i8x16.min_u`              |                           |                       |
-| `i8x16.max_s`              |                           |                       |
-| `i8x16.max_u`              |                           |                       |
-| `i8x16.avgr_u`             |                           |                       |
-| `i8x16.abs`                |                           |                       |
-| `i16x8.neg`                |                           |                       |
-| `i16x8.any_true`           |                           |                       |
-| `i16x8.all_true`           |                           |                       |
-| `i16x8.shl`                |                           |                       |
-| `i16x8.shr_s`              |                           |                       |
-| `i16x8.shr_u`              |                           |                       |
-| `i16x8.add`                |                           |                       |
-| `i16x8.add_saturate_s`     |                           |                       |
-| `i16x8.add_saturate_u`     |                           |                       |
-| `i16x8.sub`                |                           |                       |
-| `i16x8.sub_saturate_s`     |                           |                       |
-| `i16x8.sub_saturate_u`     |                           |                       |
-| `i16x8.mul`                |                           |                       |
-| `i16x8.min_s`              |                           |                       |
-| `i16x8.min_u`              |                           |                       |
-| `i16x8.max_s`              |                           |                       |
-| `i16x8.max_u`              |                           |                       |
-| `i16x8.avgr_u`             |                           |                       |
-| `i16x8.abs`                |                           |                       |
-| `i32x4.neg`                |                           |                       |
-| `i32x4.any_true`           |                           |                       |
-| `i32x4.all_true`           |                           |                       |
-| `i32x4.shl`                |                           |                       |
-| `i32x4.shr_s`              |                           |                       |
-| `i32x4.shr_u`              |                           |                       |
-| `i32x4.add`                |                           |                       |
-| `i32x4.sub`                |                           |                       |
-| `i32x4.mul`                |                           |                       |
-| `i32x4.min_s`              |                           |                       |
-| `i32x4.min_u`              |                           |                       |
-| `i32x4.max_s`              |                           |                       |
-| `i32x4.max_u`              |                           |                       |
-| `i32x4.abs`                |                           |                       |
-| `i64x2.neg`                |                           |                       |
-| `i64x2.shl`                |                           |                       |
-| `i64x2.shr_s`              |                           |                       |
-| `i64x2.shr_u`              |                           |                       |
-| `i64x2.add`                |                           |                       |
-| `i64x2.sub`                |                           |                       |
-| `i64x2.mul`                |                           |                       |
-| `f32x4.abs`                |                           |                       |
-| `f32x4.neg`                |                           |                       |
-| `f32x4.sqrt`               |                           |                       |
-| `f32x4.add`                |                           |                       |
-| `f32x4.sub`                |                           |                       |
-| `f32x4.mul`                |                           |                       |
-| `f32x4.div`                |                           |                       |
-| `f32x4.min`                |                           |                       |
-| `f32x4.max`                |                           |                       |
-| `f64x2.abs`                |                           |                       |
-| `f64x2.neg`                |                           |                       |
-| `f64x2.sqrt`               |                           |                       |
-| `f64x2.add`                |                           |                       |
-| `f64x2.sub`                |                           |                       |
-| `f64x2.mul`                |                           |                       |
-| `f64x2.div`                |                           |                       |
-| `f64x2.min`                |                           |                       |
-| `f64x2.max`                |                           |                       |
+| `i8x16.shl`                |                        10 |                       |
+| `i8x16.shr_s`              |                         9 |                       |
+| `i8x16.shr_u`              |                         9 |                       |
+| `i8x16.add`                |                         1 |                       |
+| `i8x16.add_saturate_s`     |                         1 |                       |
+| `i8x16.add_saturate_u`     |                         1 |                       |
+| `i8x16.sub`                |                         1 |                       |
+| `i8x16.sub_saturate_s`     |                         1 |                       |
+| `i8x16.sub_saturate_u`     |                         1 |                       |
+| `i8x16.min_s`              |                         1 |                       |
+| `i8x16.min_u`              |                         1 |                       |
+| `i8x16.max_s`              |                         1 |                       |
+| `i8x16.max_u`              |                         1 |                       |
+| `i8x16.avgr_u`             |                         1 |                       |
+| `i8x16.abs`                |                       N/A |                       |
+| `i16x8.neg`                |                         2 |                       |
+| `i16x8.any_true`           |                         4 |                       |
+| `i16x8.all_true`           |                         6 |                       |
+| `i16x8.shl`                |                       1-3 |                       |
+| `i16x8.shr_s`              |                       1-3 |                       |
+| `i16x8.shr_u`              |                       1-3 |                       |
+| `i16x8.add`                |                         1 |                       |
+| `i16x8.add_saturate_s`     |                         1 |                       |
+| `i16x8.add_saturate_u`     |                         1 |                       |
+| `i16x8.sub`                |                         1 |                       |
+| `i16x8.sub_saturate_s`     |                         1 |                       |
+| `i16x8.sub_saturate_u`     |                         1 |                       |
+| `i16x8.mul`                |                         1 |                       |
+| `i16x8.min_s`              |                         1 |                       |
+| `i16x8.min_u`              |                         1 |                       |
+| `i16x8.max_s`              |                         1 |                       |
+| `i16x8.max_u`              |                         1 |                       |
+| `i16x8.avgr_u`             |                         1 |                       |
+| `i16x8.abs`                |                       N/A |                       |
+| `i32x4.neg`                |                         3 |                       |
+| `i32x4.any_true`           |                         4 |                       |
+| `i32x4.all_true`           |                         6 |                       |
+| `i32x4.shl`                |                       1-3 |                       |
+| `i32x4.shr_s`              |                       1-3 |                       |
+| `i32x4.shr_u`              |                       1-3 |                       |
+| `i32x4.add`                |                         1 |                       |
+| `i32x4.sub`                |                         1 |                       |
+| `i32x4.mul`                |                         1 |                       |
+| `i32x4.min_s`              |                         1 |                       |
+| `i32x4.min_u`              |                         1 |                       |
+| `i32x4.max_s`              |                         1 |                       |
+| `i32x4.max_u`              |                         1 |                       |
+| `i32x4.abs`                |                       N/A |                       |
+| `i64x2.neg`                |                         2 |                       |
+| `i64x2.shl`                |                       1-3 |                       |
+| `i64x2.shr_s`              |                         8 |                       |
+| `i64x2.shr_u`              |                       1-3 |                       |
+| `i64x2.add`                |                         1 |                       |
+| `i64x2.sub`                |                         1 |                       |
+| `i64x2.mul`                |                        10 |                       |
+| `f32x4.abs`                |                         3 |                       |
+| `f32x4.neg`                |                         3 |                       |
+| `f32x4.sqrt`               |                         1 |                       |
+| `f32x4.add`                |                         1 |                       |
+| `f32x4.sub`                |                         1 |                       |
+| `f32x4.mul`                |                         1 |                       |
+| `f32x4.div`                |                         1 |                       |
+| `f32x4.min`                |                         8 |                       |
+| `f32x4.max`                |                         9 |                       |
+| `f64x2.abs`                |                       N/A |                       |
+| `f64x2.neg`                |                         2 |                       |
+| `f64x2.sqrt`               |                         1 |                       |
+| `f64x2.add`                |                         1 |                       |
+| `f64x2.sub`                |                         1 |                       |
+| `f64x2.mul`                |                         1 |                       |
+| `f64x2.div`                |                         1 |                       |
+| `f64x2.min`                |                         8 |                       |
+| `f64x2.max`                |                         9 |                       |
 | `i32x4.trunc_sat_f32x4_s`  |                           |                       |
 | `i32x4.trunc_sat_f32x4_u`  |                           |                       |
 | `f32x4.convert_i32x4_s`    |                           |                       |
@@ -185,5 +185,9 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `i32x4.widen_high_i16x8_s` |                           |                       |
 | `i32x4.widen_low_i16x8_u`  |                           |                       |
 | `i32x4.widen_high_i16x8_u` |                           |                       |
+
+Notes:
+
+- All shifts (except for byte shifts) are 1 instruction on x64 when the shift operand is an immediate and 3 when it's not
 
 # Shuffles
