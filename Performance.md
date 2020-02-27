@@ -161,30 +161,30 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `f64x2.div`                |                         1 |                       |
 | `f64x2.min`                |                         8 |                       |
 | `f64x2.max`                |                         9 |                       |
-| `i32x4.trunc_sat_f32x4_s`  |                           |                       |
-| `i32x4.trunc_sat_f32x4_u`  |                           |                       |
-| `f32x4.convert_i32x4_s`    |                           |                       |
-| `f32x4.convert_i32x4_u`    |                           |                       |
-| `v8x16.swizzle`            |                           |                       |
-| `v8x16.shuffle`            |                           |                       |
-| `i16x8.load8x8_s`          |                           |                       |
-| `i16x8.load8x8_u`          |                           |                       |
-| `i32x4.load16x4_s`         |                           |                       |
-| `i32x4.load16x4_u`         |                           |                       |
-| `i64x2.load32x2_s`         |                           |                       |
-| `i64x2.load32x2_u`         |                           |                       |
-| `i8x16.narrow_i16x8_s`     |                           |                       |
-| `i8x16.narrow_i16x8_u`     |                           |                       |
-| `i16x8.narrow_i32x4_s`     |                           |                       |
-| `i16x8.narrow_i32x4_u`     |                           |                       |
-| `i16x8.widen_low_i8x16_s`  |                           |                       |
-| `i16x8.widen_high_i8x16_s` |                           |                       |
-| `i16x8.widen_low_i8x16_u`  |                           |                       |
-| `i16x8.widen_high_i8x16_u` |                           |                       |
-| `i32x4.widen_low_i16x8_s`  |                           |                       |
-| `i32x4.widen_high_i16x8_s` |                           |                       |
-| `i32x4.widen_low_i16x8_u`  |                           |                       |
-| `i32x4.widen_high_i16x8_u` |                           |                       |
+| `i32x4.trunc_sat_f32x4_s`  |                         7 |                       |
+| `i32x4.trunc_sat_f32x4_u`  |                        13 |                       |
+| `f32x4.convert_i32x4_s`    |                         1 |                       |
+| `f32x4.convert_i32x4_u`    |                         8 |                       |
+| `v8x16.swizzle`            |                         4 |                       |
+| `v8x16.shuffle`            |                      1-16 |                       |
+| `i16x8.load8x8_s`          |                       N/A |                       |
+| `i16x8.load8x8_u`          |                       N/A |                       |
+| `i32x4.load16x4_s`         |                       N/A |                       |
+| `i32x4.load16x4_u`         |                       N/A |                       |
+| `i64x2.load32x2_s`         |                       N/A |                       |
+| `i64x2.load32x2_u`         |                       N/A |                       |
+| `i8x16.narrow_i16x8_s`     |                         1 |                       |
+| `i8x16.narrow_i16x8_u`     |                         1 |                       |
+| `i16x8.narrow_i32x4_s`     |                         1 |                       |
+| `i16x8.narrow_i32x4_u`     |                         1 |                       |
+| `i16x8.widen_low_i8x16_s`  |                         1 |                       |
+| `i16x8.widen_high_i8x16_s` |                         2 |                       |
+| `i16x8.widen_low_i8x16_u`  |                         1 |                       |
+| `i16x8.widen_high_i8x16_u` |                         2 |                       |
+| `i32x4.widen_low_i16x8_s`  |                         1 |                       |
+| `i32x4.widen_high_i16x8_s` |                         2 |                       |
+| `i32x4.widen_low_i16x8_u`  |                         1 |                       |
+| `i32x4.widen_high_i16x8_u` |                         2 |                       |
 
 Notes:
 
