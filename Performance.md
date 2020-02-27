@@ -161,33 +161,34 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `f64x2.div`                |                         1 |                     1 |
 | `f64x2.min`                |                         8 |                     1 |
 | `f64x2.max`                |                         9 |                     1 |
-| `i32x4.trunc_sat_f32x4_s`  |                         7 |                       |
-| `i32x4.trunc_sat_f32x4_u`  |                        13 |                       |
-| `f32x4.convert_i32x4_s`    |                         1 |                       |
-| `f32x4.convert_i32x4_u`    |                         8 |                       |
-| `v8x16.swizzle`            |                         4 |                       |
-| `v8x16.shuffle`            |                      1-16 |                       |
-| `i16x8.load8x8_s`          |                       N/A |                       |
-| `i16x8.load8x8_u`          |                       N/A |                       |
-| `i32x4.load16x4_s`         |                       N/A |                       |
-| `i32x4.load16x4_u`         |                       N/A |                       |
-| `i64x2.load32x2_s`         |                       N/A |                       |
-| `i64x2.load32x2_u`         |                       N/A |                       |
-| `i8x16.narrow_i16x8_s`     |                         1 |                       |
-| `i8x16.narrow_i16x8_u`     |                         1 |                       |
-| `i16x8.narrow_i32x4_s`     |                         1 |                       |
-| `i16x8.narrow_i32x4_u`     |                         1 |                       |
-| `i16x8.widen_low_i8x16_s`  |                         1 |                       |
-| `i16x8.widen_high_i8x16_s` |                         2 |                       |
-| `i16x8.widen_low_i8x16_u`  |                         1 |                       |
-| `i16x8.widen_high_i8x16_u` |                         2 |                       |
-| `i32x4.widen_low_i16x8_s`  |                         1 |                       |
-| `i32x4.widen_high_i16x8_s` |                         2 |                       |
-| `i32x4.widen_low_i16x8_u`  |                         1 |                       |
-| `i32x4.widen_high_i16x8_u` |                         2 |                       |
+| `i32x4.trunc_sat_f32x4_s`  |                         7 |                     1 |
+| `i32x4.trunc_sat_f32x4_u`  |                        13 |                     1 |
+| `f32x4.convert_i32x4_s`    |                         1 |                     1 |
+| `f32x4.convert_i32x4_u`    |                         8 |                     1 |
+| `v8x16.swizzle`            |                         4 |                     1 |
+| `v8x16.shuffle`            |                      1-16 |                 1-12? |
+| `i16x8.load8x8_s`          |                       N/A |                   N/A |
+| `i16x8.load8x8_u`          |                       N/A |                   N/A |
+| `i32x4.load16x4_s`         |                       N/A |                   N/A |
+| `i32x4.load16x4_u`         |                       N/A |                   N/A |
+| `i64x2.load32x2_s`         |                       N/A |                   N/A |
+| `i64x2.load32x2_u`         |                       N/A |                   N/A |
+| `i8x16.narrow_i16x8_s`     |                         1 |                   2-3 |
+| `i8x16.narrow_i16x8_u`     |                         1 |                   2-3 |
+| `i16x8.narrow_i32x4_s`     |                         1 |                   2-3 |
+| `i16x8.narrow_i32x4_u`     |                         1 |                   2-3 |
+| `i16x8.widen_low_i8x16_s`  |                         1 |                     1 |
+| `i16x8.widen_high_i8x16_s` |                         2 |                     1 |
+| `i16x8.widen_low_i8x16_u`  |                         1 |                     1 |
+| `i16x8.widen_high_i8x16_u` |                         2 |                     1 |
+| `i32x4.widen_low_i16x8_s`  |                         1 |                     1 |
+| `i32x4.widen_high_i16x8_s` |                         2 |                     1 |
+| `i32x4.widen_low_i16x8_u`  |                         1 |                     1 |
+| `i32x4.widen_high_i16x8_u` |                         2 |                     1 |
 
 Notes:
 
+- The instruction counts above ignore extra moves that may happen between instructions; see https://bugs.chromium.org/p/v8/issues/detail?id=10116
 - All shifts (except for byte shifts) are 1 instruction on x64 when the shift operand is an immediate and 3 when it's not
 - All shifts are 1 instruction on arm64 when the shift operand is an immediate and 3 (left) or 4 (right) when it's not
 
