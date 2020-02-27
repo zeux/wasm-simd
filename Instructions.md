@@ -26,8 +26,8 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `i32x4.extract_lane`       |                         1 |                     1 |
 | `i32x4.replace_lane`       |                         1 |                   1-2 |
 | `i64x2.splat`              |                         1 |                     1 |
-| `i64x2.extract_lane`       |                         2 |                     1 |
-| `i64x2.replace_lane`       |                         2 |                   1-2 |
+| `i64x2.extract_lane`       |                         1 |                     1 |
+| `i64x2.replace_lane`       |                         1 |                   1-2 |
 | `f32x4.splat`              |                         2 |                     1 |
 | `f32x4.extract_lane`       |                         2 |                     1 |
 | `f32x4.replace_lane`       |                         1 |                   1-2 |
