@@ -102,7 +102,7 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `i8x16.max_s`              |                         1 |                     1 |
 | `i8x16.max_u`              |                         1 |                     1 |
 | `i8x16.avgr_u`             |                         1 |                     1 |
-| `i8x16.abs`                |                       N/A |                     1 |
+| `i8x16.abs`                |                         1 |                     1 |
 | `i16x8.neg`                |                         2 |                     1 |
 | `i16x8.any_true`           |                         4 |                     4 |
 | `i16x8.all_true`           |                         6 |                     4 |
@@ -121,7 +121,7 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `i16x8.max_s`              |                         1 |                     1 |
 | `i16x8.max_u`              |                         1 |                     1 |
 | `i16x8.avgr_u`             |                         1 |                     1 |
-| `i16x8.abs`                |                       N/A |                     1 |
+| `i16x8.abs`                |                         1 |                     1 |
 | `i32x4.neg`                |                         3 |                     1 |
 | `i32x4.any_true`           |                         4 |                     4 |
 | `i32x4.all_true`           |                         6 |                     4 |
@@ -135,7 +135,7 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `i32x4.min_u`              |                         1 |                     1 |
 | `i32x4.max_s`              |                         1 |                     1 |
 | `i32x4.max_u`              |                         1 |                     1 |
-| `i32x4.abs`                |                       N/A |                     1 |
+| `i32x4.abs`                |                         1 |                     1 |
 | `i64x2.neg`                |                         2 |                     1 |
 | `i64x2.shl`                |                       1-3 |                   1-3 |
 | `i64x2.shr_s`              |                         8 |                   1-4 |
@@ -152,8 +152,8 @@ The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 | `f32x4.div`                |                         1 |                     1 |
 | `f32x4.min`                |                         8 |                     1 |
 | `f32x4.max`                |                         9 |                     1 |
-| `f64x2.abs`                |                       N/A |                     1 |
-| `f64x2.neg`                |                         2 |                     1 |
+| `f64x2.abs`                |                         3 |                     1 |
+| `f64x2.neg`                |                         3 |                     1 |
 | `f64x2.sqrt`               |                         1 |                     1 |
 | `f64x2.add`                |                         1 |                     1 |
 | `f64x2.sub`                |                         1 |                     1 |
