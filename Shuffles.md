@@ -12,6 +12,8 @@ Both fallback paths are *slow* so you want to avoid them at all costs, which mea
 
 Because describing the entire possibility space is way too hard, let's look at shuffles that are supported efficiently on both x64 and arm64.
 
+This data is based on analyzing v8 source as of February 28th 2020; note that v8 continues to improve the codegen and some of these instruction counts are going to be improved in the future.
+
 ## Splats
 
 These shuffle masks replicate one input lane (8/16/32-bit) to all output lanes. They map to 1-2 instructions on x64 and 1 instruction on arm64.
