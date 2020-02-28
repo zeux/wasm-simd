@@ -6,6 +6,8 @@ Note that while instruction count isn't always indicative of performance, it can
 
 The instruction counts are assuming AVX2 / AArch64 codegen respectively.
 
+This table is based on analyzing v8 source as of February 28th 2020; note that v8 continues to improve the codegen and some of these instruction counts are going to be improved in the future.
+
 | Instruction                | v8 x64                    | v8 arm64              |
 | ---------------------------|---------------------------|-----------------------|
 | `v128.load`                |                         1 |                     1 |
