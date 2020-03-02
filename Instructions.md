@@ -1,6 +1,6 @@
 # Instructions
 
-For each WASM SIMD instruction, you can see the number of instructions that v8 generates.
+For each Wasm SIMD instruction, you can see the number of instructions that v8 generates.
 
 Note that while instruction count isn't always indicative of performance, it can give you an insight into what instructions to use and what to avoid.
 
