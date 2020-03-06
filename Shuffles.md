@@ -84,7 +84,7 @@ They allow you to alternate between 8/16/32-bit elements from both vectors, but 
 ## Transposes
 
 These shuffle masks map to 4-5 instructions on x64 and 1 instruction on arm64.
-They allow you to alternate between 8-bit elements from both vectors, but instead of working on low/high halves of the input vector, they output odd/even elements, and instead of outputting elements from each vector sequentially they alternate between the two vectors. Who comes up with this stuff?
+They allow you to alternate between 8-bit elements from both vectors, but instead of working on low/high halves of the input vector, they output odd/even elements, and instead of outputting elements from each vector sequentially they alternate between the two vectors.
 
 8-bit:
 - even: `{0, 16, 2, 18, 4, 20, 6, 22, 8, 24, 10, 26, 12, 28, 14, 30}`
@@ -93,7 +93,7 @@ They allow you to alternate between 8-bit elements from both vectors, but instea
 ## Reverses
 
 These shuffle masks map to 4-6 instructions on x64 and 1 instruction on arm64.
-They allow you to reverse the order of bytes in each 64/32/16-bit lane. Happy endian swapping.
+They allow you to reverse the order of bytes in each 64/32/16-bit lane.
 
 - 64-bit: `{7, 6, 5, 4, 3, 2, 1, 0, 15, 14, 13, 12, 11, 10, 9, 8}`
 - 32-bit: `{3, 2, 1, 0, 7, 6, 5, 4, 11, 10, 9, 8, 15, 14, 13, 12}`
