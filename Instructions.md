@@ -86,8 +86,8 @@ This table is based on analyzing v8 source as of February 28th 2020; note that v
 | `v128.xor`                 |                         1 |                     1 |
 | `v128.bitselect`           |                         4 |                     1 |
 | `i8x16.neg`                |                         2 |                     1 |
-| `i8x16.any_true`           |                         4 |                     4 |
-| `i8x16.all_true`           |                         6 |                     4 |
+| `i8x16.any_true`           |                         3 |                     4 |
+| `i8x16.all_true`           |                         5 |                     4 |
 | `i8x16.shl`                |                        10 |                   1-3 |
 | `i8x16.shr_s`              |                         9 |                   1-4 |
 | `i8x16.shr_u`              |                         9 |                   1-4 |
@@ -104,8 +104,8 @@ This table is based on analyzing v8 source as of February 28th 2020; note that v
 | `i8x16.avgr_u`             |                         1 |                     1 |
 | `i8x16.abs`                |                         1 |                     1 |
 | `i16x8.neg`                |                         2 |                     1 |
-| `i16x8.any_true`           |                         4 |                     4 |
-| `i16x8.all_true`           |                         6 |                     4 |
+| `i16x8.any_true`           |                         3 |                     4 |
+| `i16x8.all_true`           |                         5 |                     4 |
 | `i16x8.shl`                |                       1-3 |                   1-3 |
 | `i16x8.shr_s`              |                       1-3 |                   1-4 |
 | `i16x8.shr_u`              |                       1-3 |                   1-4 |
@@ -123,8 +123,8 @@ This table is based on analyzing v8 source as of February 28th 2020; note that v
 | `i16x8.avgr_u`             |                         1 |                     1 |
 | `i16x8.abs`                |                         1 |                     1 |
 | `i32x4.neg`                |                         3 |                     1 |
-| `i32x4.any_true`           |                         4 |                     4 |
-| `i32x4.all_true`           |                         6 |                     4 |
+| `i32x4.any_true`           |                         3 |                     4 |
+| `i32x4.all_true`           |                         5 |                     4 |
 | `i32x4.shl`                |                       1-3 |                   1-3 |
 | `i32x4.shr_s`              |                       1-3 |                   1-4 |
 | `i32x4.shr_u`              |                       1-3 |                   1-4 |
