@@ -88,9 +88,9 @@ This table is based on analyzing v8 source as of February 28th 2020; note that v
 | `i8x16.neg`                |                         2 |                     1 |
 | `i8x16.any_true`           |                         3 |                     4 |
 | `i8x16.all_true`           |                         5 |                     4 |
-| `i8x16.shl`                |                        10 |                   1-3 |
-| `i8x16.shr_s`              |                         9 |                   1-4 |
-| `i8x16.shr_u`              |                         9 |                   1-4 |
+| `i8x16.shl`                |                      5-10 |                   1-3 |
+| `i8x16.shr_s`              |                       5-9 |                   1-4 |
+| `i8x16.shr_u`              |                       5-9 |                   1-4 |
 | `i8x16.add`                |                         1 |                     1 |
 | `i8x16.add_saturate_s`     |                         1 |                     1 |
 | `i8x16.add_saturate_u`     |                         1 |                     1 |
@@ -189,5 +189,6 @@ This table is based on analyzing v8 source as of February 28th 2020; note that v
 Notes:
 
 - The instruction counts above ignore extra moves that may happen between instructions; see https://bugs.chromium.org/p/v8/issues/detail?id=10116
-- All shifts (except for byte shifts) are 1 instruction on x64 when the shift operand is an immediate and 3 when it's not
-- All shifts are 1 instruction on arm64 when the shift operand is an immediate and 3 (left) or 4 (right) when it's not
+- All 16 or 32-bit shifts are 1 instruction on x64 when the shift operand is an immediate and 3 when it's not
+- All 8-bit shifts are 5 instructions on x64 when the shift operand is an immediate and 9-10 when it's not
+- All shifts are 1 instruction on arm64 when the shift operand is an immediate and 3-4 when it's not
