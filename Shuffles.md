@@ -6,11 +6,11 @@ Shuffles are... complicated!
 
 The short story is that on both x64 and arm64, v8 will try to pattern-match shuffle byte masks with one of the masks supported by the code generator natively. Note that "natively" doesn't mean it's just a single instruction - it can be more for more complex shuffles.
 
-When the pattern matching fails, v8 resorts to a bruteforce solution, which is pretty slow/sad - on x64 it involves constructing two 16 byte masks for `pshufb` on the stack, doing two shuffles and or-ing the result (16 instructions!), on arm64 it involves constructing a 16-byte table lookup mask in the register using a lot of 16-bit immediate moves and using a table lookup (>10 instructions, not sure what the exact count is?).
+When the pattern matching fails, v8 resorts to a bruteforce solution - on x64 it involves constructing two 16 byte masks for `pshufb` in temporary registers, doing two shuffles and or-ing the result (which adds up to 11 instructions), on arm64 it involves constructing a 16-byte table lookup mask in the register using a lot of 16-bit immediate moves and using a table lookup (>10 instructions, not sure what the exact count is?).
 
-Both fallback paths are *slow* so you want to avoid them at all costs, which means that (unfortunately) you need to know which masks pattern-match well - this is complex!
+Both fallback paths are not very fast so you likely want to avoid them, which means that (unfortunately) you need to know which masks pattern-match well - this is complicated!
 
-Because describing the entire possibility space is way too hard, let's look at shuffles that are supported efficiently on both x64 and arm64.
+Because describing the entire possibility space is too hard, and there are some shuffles that are fast on x64 and slow on arm64 (making them non-portable wrt performance), let's look at shuffles that are supported efficiently on both x64 and arm64.
 
 This data is based on analyzing v8 source as of February 28th 2020; note that v8 continues to improve the codegen and some of these instruction counts are going to be improved in the future.
 
