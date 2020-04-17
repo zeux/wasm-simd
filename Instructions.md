@@ -166,7 +166,7 @@ This table is based on analyzing v8 source as of February 28th 2020; note that v
 | `f32x4.convert_i32x4_s`    |                         1 |                     1 |
 | `f32x4.convert_i32x4_u`    |                         8 |                     1 |
 | `v8x16.swizzle`            |                         4 |                     1 |
-| `v8x16.shuffle`            |                      1-16 |                 1-12? |
+| `v8x16.shuffle`            |                      1-11 |                 1-12? |
 | `i16x8.load8x8_s`          |                       N/A |                   N/A |
 | `i16x8.load8x8_u`          |                       N/A |                   N/A |
 | `i32x4.load16x4_s`         |                       N/A |                   N/A |
