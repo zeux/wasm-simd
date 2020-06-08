@@ -150,8 +150,8 @@ This table is based on analyzing v8 source as of February 28th 2020; note that v
 | `f32x4.sub`                |                         1 |                     1 |
 | `f32x4.mul`                |                         1 |                     1 |
 | `f32x4.div`                |                         1 |                     1 |
-| `f32x4.min`                |                         8 |                     1 |
-| `f32x4.max`                |                         9 |                     1 |
+| `f32x4.min`                |                         6 |                     1 |
+| `f32x4.max`                |                         6 |                     1 |
 | `f64x2.abs`                |                         3 |                     1 |
 | `f64x2.neg`                |                         3 |                     1 |
 | `f64x2.sqrt`               |                         1 |                     1 |
